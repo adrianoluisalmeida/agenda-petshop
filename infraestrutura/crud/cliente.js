@@ -35,6 +35,7 @@ class Cliente {
 
   adiciona(item) {
     const { nome, cpf } = item
+    console.log(item)
     const sql = `INSERT INTO Clientes(nome, CPF) VALUES('${nome}', '${cpf}')`
 
     return executaQuery(sql).then(resposta => ({

@@ -1,11 +1,14 @@
 const path = require('path')
 const mergeGraphQLSchemas = require('merge-graphql-schemas')
 
+const arquivos = path.join(__dirname, './')
+
 const {
-    fileLoader
+    fileLoader,
+    mergeTypes
 } = mergeGraphQLSchemas
 
-const arquivos = path.join(__dirname, './')
 const arquivosCarregados = fileLoader(arquivos)
+const schemas = mergeTypes(arquivosCarregados)
 
-module.exports = arquivosCarregados
+module.exports = schemas;

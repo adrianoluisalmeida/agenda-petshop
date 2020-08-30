@@ -4,8 +4,9 @@ const conexao = mysql.createConnection({
   host: 'localhost',
   port: 3306,
   user: 'root',
-  password: '968574',
-  database: 'agenda-petshop',
+  password: 'docker',
+  database: 'graphql',
+  connectionLimit: 10,
   multipleStatements: true
 })
 
